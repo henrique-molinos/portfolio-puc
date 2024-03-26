@@ -1,0 +1,55 @@
+<!-- REQUESTS -->
+
+<script>
+    console.log('[Fila/Queue]');
+
+    // Dado: um atrás do outro - a ordem importa
+    // FIFO - First In First Out
+
+    var fila = [
+        'scripts.js',
+        'style.css',
+        'imagem.png'
+    ];
+    // Para adicionar elementos no Array em JS se usa o método fila.push()
+    fila.push('doguinho.jpg');
+    
+    // Para retirar o primeiro elemento da lista, se usa o método fila.shift()
+    fila.shift();
+
+    // =================================
+    // Receita para criar filas - CLASSE
+    // =================================
+    // - Enqueue
+    // - Dequeue
+
+    class Queue {
+        // Ao criar a fila, o this.data cria a Array que será tratada no momento.
+        constructor() {
+            this.data = [];
+        }
+        print() {
+            console.log(this.data);
+        }
+        enqueue(item) {
+            this.data.push(item);
+        }
+        dequeue() {
+            this.data.shift();
+        }
+    }
+
+    // Design do código First
+    var requests = new Queue();
+    // Open-Closed
+    // Open: Aberto pra extensão
+    // Closed: Fechado pra modificação
+    requests.enqueue('scripts.js');
+    requests.print();
+    requests.dequeue();
+    requests.enqueue('style.css');
+    requests.enqueue('imagem.png');
+    requests.enqueue('doguinho.jpg');
+    requests.print();
+
+</script>
