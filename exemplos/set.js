@@ -8,7 +8,7 @@ mySet.add(1)
 console.log(mySet)
 console.log("-*-*-*-*-")
 
-mySet.add(1)
+mySet.add(1) // Não adicionará valor, pois sets não aceitam duplicidade
 console.log(mySet)
 console.log("-*-*-*-*-")
 
